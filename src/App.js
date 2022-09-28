@@ -10,13 +10,13 @@ function App() {
       <Message texty={textForTexty} />
       <header className="App-header">
         <div className = "block">
-          Hello! <br />
+          Hello!<br />
           <button
             className="button"
             autoFocus
             onClick={() => alert("You got two termal clips!")}
           >
-            Press on this button to became a programmer!
+            Press on this button to became a programmer! 
           </button>
         </div>
       </header>

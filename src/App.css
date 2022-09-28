@@ -45,7 +45,7 @@
 }
 
 .button {
-  display: flex;
+  display: flex; 
   color:aquamarine;
   background-color: #282c34;
   padding: 20px;
