@@ -52,9 +52,9 @@
   margin: 20px 10px;
   position: relative;
   font-family: 'Lato', sans-serif;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 17px;
-  font-weight: 400;
+  font-weight: 200;
 }
 
 .button:hover {
@@ -68,7 +68,7 @@
   background-color: #000;
 }
 
-.texty {
+/* .texty {
   background-color: cadetblue;
   font-style:italic;
   font-family: 'Lato', sans-serif;
@@ -78,9 +78,9 @@
   color: #222222;
   margin: 0 auto;
   padding: 20px 0 20px 20px;
-}
+} */
 
-.panda {
+/* .panda {
   color:aquamarine;
   background-color: cadetblue;
 }
@@ -88,4 +88,64 @@
 .panda_h1 {
   background-color: black;
   margin: 0 auto;
+} */
+
+.count {
+  border: 1px solid #61dafb;
+  padding: 0 auto;
+  margin: 10px 200px;
+  color: white;
+  background:#21242b; 
+  -moz-box-shadow:0 0 30px #000; 
+  -webkit-box-shadow:0 0 30px #000; 
+  box-shadow:0 0 30px #000;
+}
+
+.button_count {
+  /* flex-wrap: nowrap; */
+  display:flex;
+  justify-content: space-around;
+  margin: 30px 50px;
+}
+
+.message_css {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 30px 80px;
+  align-content:center;
+}
+
+.message_input {
+  display: flex;
+  height: 30px;
+  margin-top: 30px;
+  
+}
+
+.message_input:active {
+  box-shadow:4px 4px 10px #282c34;
+}
+
+.message_input:hover {
+  outline-color:aquamarine;
+}
+
+.leftColumn {
+  color:aquamarine;
+  border: 1px solid #61dafb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 10px 200px;
+  padding: 0 0 0 10px;
+  text-align: left;
+}
+
+.rightColumn {
+  color: white;
+  border: 1px solid white;
+  justify-content: space-around;
+  text-align: right;
+  padding: 0 10px 0 0;
 }

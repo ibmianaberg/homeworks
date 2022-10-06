@@ -1,43 +1,74 @@
 import "./App.css";
+import { useEffect, useState } from "react";
+import { SendMessage } from "./SendMessage";
 
-function App() {
-  const userName = "Panda";
-  const textForTexty = "Everything is going to be good!";
+const App = () => {
+  const [messageList, setMessageList] = useState([]);
+  const [mapIsNeed, setMapIsNeed] = useState(false);
+
+  useEffect(() => {
+    if(messageList.length > 0 && mapIsNeed === true){
+      setTimeout(()=>{
+        setMessageList(
+        [...messageList,
+          {
+            text: `Привет, друг ${messageList[messageList.length-1].author}!`,
+            author: 'bot',
+            human: true
+          }
+        ])
+        setMapIsNeed(!mapIsNeed)
+      }, 1500)
+    }
+  });
+  console.log(messageList);
+
+  // const mapListHelper =
+  //    messageList
+  //     .filter((e) => e.human)
+  //     .map(
+  //       (e, i) => (
+  //         <div className="leftColumn" key={i}>
+  //           {e.text} {e.author}
+  //         </div>
+  //       )
+  //     );
+
+  // const mapListHelper2 = messageList
+  //     .filter((e) => !e.human)
+  //     .map((e, i) => (
+  //       <div className="rightColumn" key={i}>
+  //         {e.text} {e.author}
+  //       </div>
+  //     ))
+
+  const sortColumnList = () =>
+    messageList.map((e, i) => {
+      const style = e.human ? "leftColumn" : "rightColumn";
+
+      return (
+        <div className={style} key={i}>
+          {e.text} {e.author}
+        </div>
+      );
+    });
 
   return (
     <div className="App">
-      <Myheader name={userName} />
-      <Message texty={textForTexty} />
+      <h1>
+        <SendMessage
+          setMessageList={setMessageList}
+          mapIsNeed={mapIsNeed}
+          setMapIsNeed={setMapIsNeed}
+        />
+        {sortColumnList()}
+      </h1>
+
       <header className="App-header">
-        <div className = "block">
-          Hello!<br />
-          <button
-            className="button"
-            autoFocus
-            onClick={() => alert("You got two termal clips!")}
-          >
-            Press on this button to became a programmer! 
-          </button>
-        </div>
+        <div className="block"></div>
       </header>
     </div>
   );
-}
+};
 
 export default App;
-
-const Myheader = (props) => {
-  return (
-    <div className ='panda'>
-      <h1 className = 'panda_h1'>Hello, {props.name}</h1>
-    </div>
-  );
-};
-
-const Message = (texty) => {
-  return (
-    <div className="texty">
-      <h2> You are the best! {texty.textForTexty} </h2>
-    </div>
-  );
-};
